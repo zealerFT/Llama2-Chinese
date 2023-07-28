@@ -29,16 +29,22 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /tmp/Python-3.10.12.tar.xz /tmp/Python-3.10.12 \
     && apt-get install -y git \
     && curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash \
-    && apt-get install -y git-lfs \
-    && pip install --upgrade pip
+    && apt-get install -y git-lfs
+    # && pip install --upgrade pip
 
 #设置工作目录
 WORKDIR /root/Llama2-Chinese
 
 # 从git上克隆llama2-chinese仓库
-RUN git clone https://github.com/FlagAlpha/Llama2-Chinese.git /root/Llama2-Chinese 
 
-# 使用pip安装requirements.txt
+RUN git clone https://github.com/zealerFT/Llama2-Chinese.git /root/Llama2-Chinese
+
+# 使用pip安装requirements.tx
+RUN pip install --upgrade pip
+RUN pip install torch
+RUN pip install torchvision
+RUN pip install torchaudio
+RUN pip install auto_gptq
 RUN pip install -r requirements.txt
 
 #克隆Hugging Face仓库

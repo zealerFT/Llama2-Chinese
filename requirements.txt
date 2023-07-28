@@ -1,7 +1,6 @@
 bitsandbytes==0.39.0
 accelerate==0.21.0
-#deepspeed==0.10.0
-git+https://github.com/PanQiWei/AutoGPTQ.git
+#deepspeed==0.10.
 scipy
 sentencepiece
 datasets
@@ -10,8 +9,5 @@ pytest
 git+https://github.com/huggingface/peft
 transformers==4.31.0
 scikit-learn
-torch --index-url https://download.pytorch.org/whl/cu118
-torchvision --index-url https://download.pytorch.org/whl/cu118
-torchaudio --index-url https://download.pytorch.org/whl/cu118
 tensorboard
 gradio
